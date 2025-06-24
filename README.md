@@ -1,13 +1,21 @@
-Olá, amigos! 😁
+## 📚 O Livreiro do Carrão
 
-Este é um projeto de conclusão de curso
-elaborado no Instituto da Oportunidade
-Social, em São Paulo. Foi mentoriado por
-Thiago Lira e Jhonattan Venturini, que
-nos deram a oportunidade incrível de
-explorar nossa criatividade e fazer este
-site. Agradecemos de coração ❤️
+Site desenvolvido como projeto de conclusão de curso no *Instituto da Oportunidade Social (IOS)*, em São Paulo.
 
-Site feito por Rosa Vitória, Grazieli
-Andrade, Mateus Queiroz, Mariana Miranda
-e Raihan Nascimento.
+Criado para apoiar o trabalho do **Livreiro do Carrão**, que vende livros novos e usados próximo ao metrô Vila Matilde, na zona leste de SP.
+
+---
+
+## 💡 Mentoria
+
+Agradecimentos especiais aos mentores **Thiago Lira** e **Jhonattan Venturini**, que nos guiaram e incentivaram durante todo o processo. ❤️
+
+---
+
+## 👩‍💻 Desenvolvedores
+
+- Rosa Vitória  
+- Grazieli Andrade  
+- Mateus Queiroz  
+- Mariana Miranda  
+- Raihan Nascimento
