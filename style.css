@@ -13,6 +13,7 @@ body, html{
 }
 .header .row{
     margin-top: 70px;
+    padding-bottom: 70px;
 }
 
 .titulo{
