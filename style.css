@@ -1,58 +1,116 @@
+/* Reset de margin e padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos gerais do body e html */
 body, html {
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     height: 100%;
+    padding-top: 70px;
 }
 
+/* Estilo da navegação */
+nav {
+    display: flex;
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(87, 40, 34);
+    z-index: 9999;
+    padding: 10px; /* Padding inicial */
+}
 
-header h1 {
-    font-size: 80%;
-    color: white;
+/* Logo (esquerda) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    z-index: 10000; /* Garante que a logo fique acima de outros elementos */
 }
 
 #logo {
-    width: 300px;
+    width: 125px;
+    height: auto;
+    margin-right: 15px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-a, header a {
+/* Título da logo */
+nav h1 {
+    font-size: 1.5rem;
     color: white;
-    font-size: 18px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Menu de navegação */
+.nav-menu {
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    width: 100%; /* Ocupa todo espaço disponível */
+}
+
+#MenuItems {
+    list-style-type: none;
+    display: flex;
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove padding */
+}
+
+#MenuItems li {
+    margin-left: 40px; /* Espaçamento entre os itens */
+}
+
+/* Links do menu */
+#MenuItems a {
+    color: white;
+    font-size: 16px;
     text-decoration: none;
     position: relative;
-    display: inline-block;
+    padding: 8px 0;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header a::after {
+/* Efeito hover nos links */
+#MenuItems a:hover {
+    color: rgb(255, 213, 96);
+    transform: scale(1.1);
+}
+
+#MenuItems a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -4px;
-    width: 0%;
+    width: 0;
     height: 2px;
     background-color: rgb(255, 153, 0);
     transition: width 0.3s ease;
 }
 
-header a:hover {
-    color: rgb(255, 213, 96);
-    transform: scale(1.1);
-}
-
-header a:hover::after {
+#MenuItems a:hover::after {
     width: 100%;
 }
 
+/* Quando o scroll for maior que 50px, a logo vai diminuir e o nav vai "encolher" */
+nav.shrink {
+    padding: 10px 20px; /* Menor padding */
+}
+
+nav.shrink #logo {
+    width: 100px; /* Logo menor */
+}
+
+/* Estilo de esconder a navegação */
+nav.hidden {
+    top: -80px; /* Esconde a navegação */
+}
+
+/* Estilos da seção principal */
 .header {
     background-image: url(imagens/fundo.png);
     background-size: cover;
@@ -65,66 +123,25 @@ header a:hover::after {
     padding-bottom: 5px;
 }
 
-.titulo {
-    color: #ffffff;
-    font-size: 40px;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-nav {
-    flex: 1;
-    text-align: right;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: rgba(87, 40, 34, 0.95);
-    padding: 15px 25px;
-    border-radius: 0 0 0 10px;
-    z-index: 9999;
-    min-width: 250px;
-}
-
-nav ul {
-    display: inline-block;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 50px;
-    font-size: 20px;
-}
-
-p {
-    color: #000000;
-    font-size: 30px;
-}
-
+/* Ajustes nas colunas */
 .container, .small-container {
     max-width: 1300px;
     margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 0 25px; /* Padding lateral */
 }
 
+/* Alinhamento da coluna principal e título */
 .row {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.col-2, .col-3, .col-4 {
-    min-width: 200px;
-    margin-bottom: 50px;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .col-2 {
     flex-basis: 50%;
+    margin-top: 60px;
+    text-align: left;
 }
 
 .col-2 img {
@@ -138,12 +155,31 @@ p {
     margin: 25px 0;
 }
 
+/* Estilo para a oferta */
+.offer {
+    background-color: #c29d7e;
+    margin-top: 80px;
+    padding: 30px 0;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.offer .offer-img {
+    padding: 50px;
+}
+
+small {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Botões */
 .btn {
     display: inline-block;
     background: #572822;
     color: #fff;
     padding: 8px 30px;
-    margin: 30px 0px;
+    margin: 30px 0;
     border-radius: 30px;
     transition: background 0.5s;
 }
@@ -152,45 +188,7 @@ p {
     background: #563434;
 }
 
-.categories {
-    margin: 70px 0;
-}
-
-.col-3 {
-    flex-basis: 30%;
-    min-width: 250px;
-}
-
-.col-3 img {
-    width: 100%;
-}
-
-.title {
-    text-align: center;
-    margin: 0 auto 80px;
-    position: relative;
-    line-height: 60px;
-    color: #555;
-}
-
-.title::after {
-    content: '';
-    background: #ff523b;
-    width: 80px;
-    height: 5px;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-h4 {
-    color: #555;
-    font-weight: normal;
-}
-
-/* --------- Todos os livros (col-4) com o estilo dos MAIS FAMOSOS --------- */
+/* Ajuste nos livros */
 .col-4 {
     flex-basis: 23%;
     padding: 10px;
@@ -205,10 +203,9 @@ h4 {
 
 .col-4 img {
     width: 100%;
-    aspect-ratio: 2 / 3;      /* proporção de capa de livro */
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: none;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
@@ -253,94 +250,13 @@ h4 {
     transform: scale(1.05);
 }
 
-.rating {
-    color: rgb(255, 166, 0);
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.rating .fa {
-    margin-right: 3px;
-}
-
-.offer {
-    background-color: #c29d7e;
-    margin-top: 80px;
-    padding: 30px 0;
-}
-
-.col-2 .offer-img {
-    padding: 50px;
-}
-
-small {
-    color: #ffffff;
-    font-size: 20px;
-}
-
-.testimonial {
-    padding-top: 100px;
-}
-
-.testimonial .col-3 {
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.5s;
-}
-
-.testimonial .col-3 img {
-    width: 50px;
-    margin-top: 20px;
-    border-radius: 50%;
-}
-
-.testimonial .col-3:hover {
-    transform: translateY(-10px);
-}
-
-.fa.fa-quote-left {
-    font-size: 34px;
-    color: #ff523b;
-}
-
-.col-3 p {
-    font-size: 12px;
-    margin: 12px 0;
-    color: #777;
-}
-
-.testimonial .col-3 h3 {
-    font-weight: 600;
-    color: #555;
-    font-size: 16px;
-}
-
-.brands {
-    margin: 100px auto;
-}
-
-.col-5 {
-    width: 100px;
-}
-
-.col-5 img {
-    width: 100%;
-    cursor: pointer;
-    filter: grayscale(100%);
-}
-
-.col-5 img:hover {
-    filter: grayscale(0);
-}
-
+/* Estilos para o rodapé */
 .footer {
     background: #000;
     color: #8a8a8a;
     font-size: 18px;
     padding: 60px 0 20px;
-    margin: 10px 0 0px;
+    margin: 10px 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -387,11 +303,11 @@ small {
 }
 
 .app-logo {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .app-logo img {
-    width: 140px;
+    width: 10px;
 }
 
 .footer hr {
@@ -412,7 +328,7 @@ small {
     filter: invert(100%);
 }
 
-/* --------- Responsivo --------- */
+/* Responsivo */
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
@@ -427,55 +343,5 @@ small {
 
     .footer-col-2 img {
         width: 150px;
-    }
-}
-
-@media only screen and (max-width:800px) {
-    nav ul {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background: #c29d7e;
-        width: 100%;
-        overflow: hidden;
-        transition: max-height 0.5s;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-@media only screen and (max-width:600px) {
-    .row {
-        text-align: center;
-    }
-
-    .col-2, .col-3, .col-4 {
-        flex-basis: 100%;
-    }
-
-    .single-product .row {
-        text-align: left;
-    }
-
-    .single-product .col-2 {
-        padding: 20px 0;
-    }
-
-    .single-product h1 {
-        font-size: 20px;
-        line-height: 32px;
-    }
-
-    .cart-info p {
-        display: none;
     }
 }

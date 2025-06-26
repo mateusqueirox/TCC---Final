@@ -123,3 +123,30 @@ cartCounter.style.cursor = 'default';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+
+let lastScrollTop = 0; // Posição do scroll
+let navbar = document.querySelector("nav"); // Seleciona a navegação
+let logo = document.getElementById("logo"); // Seleciona a logo
+
+// Função de scroll
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Verifica se rolou para baixo
+    if (currentScroll > lastScrollTop) {
+        navbar.classList.add("hidden"); // Esconde a navegação
+    } else {
+        navbar.classList.remove("hidden"); // Mostra a navegação
+    }
+
+    // Verifica se o scroll ultrapassou 50px
+    if (currentScroll > 50) {
+        navbar.classList.add("shrink"); // Encolhe a navegação e logo
+    } else {
+        navbar.classList.remove("shrink"); // Retorna ao tamanho original
+    }
+
+    // Atualiza a posição do scroll
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Previne valores negativos
+});
