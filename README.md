@@ -33,7 +33,6 @@ O objetivo foi criar uma vitrine digital para o projeto **"O Livreiro do Carrão
 - Grazieli Andrade  
 - Mateus Queiroz  
 - Mariana Miranda  
-- Raihan Nascimento
 
 ---
 
